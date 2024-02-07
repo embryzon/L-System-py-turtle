@@ -52,7 +52,7 @@ def GENERATE_L_SYSTEM(axiom, rules, iterations):
 def TURTLE(sentence):
     length = 69
     stack = []
-    angle = 10
+    angle = 9
     hue = 0.0
     for char in sentence:
         # Add more instructions for different chars
