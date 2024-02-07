@@ -16,7 +16,7 @@ def main():
     turtle.Screen().screensize(width+padding, height+padding)
     turtle.hideturtle()
     
-    # Set the turtle to be at the center bottom of the screen facing up
+    # Set the turtle to be at the bottom of the screen facing up
     turtle.penup()
     turtle.goto(width/2,-height/2)
     turtle.pendown()
