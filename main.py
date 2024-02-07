@@ -1,24 +1,28 @@
 # Based on Daniel Shiffman's Coding Challenge #16
 import turtle
 from rules import TREE
+from colorsys import hsv_to_rgb
 
 def main():
     axiom = 'F'
-    iterations = 5
+    iterations = 7 # do not set this to anything higher
 
-    width = 775
-    height = 775
+    width = 800
+    height = 800
     padding = 25
+    turtle.Screen().setup(width=0.8, height=0.8)
+    turtle.Screen().bgcolor('black')
     turtle.Screen().screensize(width+padding, height+padding)
     turtle.hideturtle()
     
     # Set the turtle to be at the center bottom of the screen facing up
     turtle.penup()
-    turtle.goto(0,-height/2)
+    turtle.goto(width/2,-height/2)
     turtle.pendown()
     turtle.left(90)
-    turtle.speed(0)
-    
+    # turtle.speed(0)
+    turtle.tracer(75)
+
     # Draw the Lsystem
     TURTLE(GENERATE_L_SYSTEM(axiom, TREE, iterations))
     
@@ -45,19 +49,26 @@ def GENERATE_L_SYSTEM(axiom, rules, iterations):
     return axiom
 
 def TURTLE(sentence):
-    length = 100
+    length = 69
     stack = []
+    angle = 10
+    hue = 0.0
     for char in sentence:
         match char:
             case 'F':
+                turtle.color(hsv_to_rgb(hue, 0.3, 0.7))
+                hue += 0.01
+                if hue > 1.0:
+                    hue = 0
+
                 turtle.forward(length)
-                length *= 0.99
-                if length < 2:
+                length -= 0.1
+                if length < 1:
                     break
             case '+':
-                turtle.left(15)
+                turtle.left(angle)
             case '-':
-                turtle.right(15)
+                turtle.right(angle)
             case '[':
                 stack.append((turtle.pos(), turtle.heading()))
             case ']':
