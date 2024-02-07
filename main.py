@@ -1,11 +1,12 @@
 # Based on Daniel Shiffman's Coding Challenge #16
 import turtle
-from rules import TREE
+from rules import *
 from colorsys import hsv_to_rgb
 
 def main():
     axiom = 'F'
-    iterations = 7 # do not set this to anything higher
+    rule = TREE
+    iterations = 3 # do not set this to anything higher
 
     width = 800
     height = 800
@@ -24,7 +25,7 @@ def main():
     turtle.tracer(75)
 
     # Draw the Lsystem
-    TURTLE(GENERATE_L_SYSTEM(axiom, TREE, iterations))
+    TURTLE(GENERATE_L_SYSTEM(axiom, rule, iterations))
     
     turtle.done()
 
@@ -54,6 +55,7 @@ def TURTLE(sentence):
     angle = 10
     hue = 0.0
     for char in sentence:
+        # Add more instructions for different chars
         match char:
             case 'F':
                 turtle.color(hsv_to_rgb(hue, 0.3, 0.7))

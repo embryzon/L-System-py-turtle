@@ -7,6 +7,13 @@ TREE = [
     }
 ]
 
+TEST = [
+    {
+        'a': 'F',
+        'b': 'F-[+F-+F]+[-F+-F]'
+    }
+]
+
 FIBONACCI = [
     {
         'a': 'A',
