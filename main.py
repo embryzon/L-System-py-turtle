@@ -6,7 +6,7 @@ from colorsys import hsv_to_rgb
 def main():
     axiom = 'F'
     rule = TREE
-    iterations = 3 # do not set this to anything higher
+    iterations = 7 # do not set this to anything higher
 
     width = 800
     height = 800
