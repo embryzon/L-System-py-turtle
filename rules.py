@@ -1,13 +1,13 @@
 # Add more rules if needed
 # GOal is to create ErenYaeger Founding titan
-TEST = [
+TREE = [
     {
         'a': 'F',
-        'b': 'F[-F]+[+F]+[+F+F]'
+        'b': 'F[+F]F[-F]F'
     }
 ]
 
-TREE = [
+BROOM_STICK = [
     {
         'a': 'F',
         'b': 'FF[+F-F-F]+[-F+F+F]'
@@ -36,6 +36,18 @@ FRACTAL_BINARY_TREE = [
     }
 ]
 
+HEIGHWAY_DRAGON = [
+    {
+        'a': 'F',
+        'b': 'F+G'
+    },
+    {
+        'a': 'G',
+        'b': 'F-G'
+    }
+]
+
+# IDK how to deal with this
 CANTOR_SET = [
     {
         'a': 'F',

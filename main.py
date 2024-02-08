@@ -14,8 +14,8 @@ def main():
     # Set Speed of drawing
     turtle.tracer(75)
     
-    # Fractal binary tree
-    axiom, rule, iterations, length, angle, startX, startY, dec = fractal_binary_tree(width, height)
+    # Heighway
+    axiom, rule, iterations, length, angle, startX, startY, dec = heighway_dragon(width, height)
 
     # Set initial position and heading of the turtle
     setStartPos(startX, startY)
@@ -23,17 +23,6 @@ def main():
     # Draw the Lsystem
     sentence = GENERATE_L_SYSTEM(axiom, rule, iterations)
     TURTLE(sentence, length, angle, dec)
-
-    # # TREE
-    # axiom, rule, iterations, length, angle, startX, startY = broom_stick(width, height)
-    
-    # # Set initial position and heading of the turtle
-    # setStartPos(startX, startY)
-    
-    # # Draw the Lsystem
-    # sentence = GENERATE_L_SYSTEM(axiom, rule, iterations)
-    # TURTLE(sentence, length, angle)
-
     
     turtle.done()
 
@@ -108,16 +97,38 @@ def fractal_binary_tree(width, height):
     dec = 0.001
     return (axiom, rule, iterations, length, angle, x, y, dec)
 
-def broom_stick(width, height):
+def tree(width, height):
     axiom = 'F'
     rule = TREE
-    iterations = 7
-    length = 69
-    angle = 9
+    iterations = 5
+    length = 3
+    angle = 30
     x = width/2
     y = -height/2
+    dec = 0.0001
+    return (axiom, rule, iterations, length, angle, x, y, dec)
 
-    return (axiom, rule, iterations, length, angle, x, y)
+def cantor_set(width, height):
+    axiom = 'F'
+    rule = CANTOR_SET
+    iterations = 7
+    length = 10
+    angle = 9
+    x = 0
+    y = 0
+    dec = 0.001
+    return (axiom, rule, iterations, length, angle, x, y, dec)
+
+def heighway_dragon(width, height):
+    axiom = 'F'
+    rule = HEIGHWAY_DRAGON
+    iterations = 10
+    length = 10
+    angle = 90
+    x = 0
+    y = 0
+    dec = 0.001
+    return (axiom, rule, iterations, length, angle, x, y, dec)
 
 def setScreen(width, height, padding, bgcolor='black'):
     turtle.Screen().setup(width=0.8, height=0.8)
